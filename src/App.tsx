@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import TableView from "./components/TableView";
+import api from "./Api";
+type dataFormate = { userId: number; id: number; title: string; body: string };
 
 function App() {
+  const [value, chageValue] = useState<dataFormate[]>([]);
+
+  useEffect(() => {
+    const getValue = async () => {
+      await api
+        .valueGet()
+        .then((result) => {
+          return result.json();
+        })
+        .then((res) => {
+          chageValue(res);
+        });
+    };
+    getValue();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: "40px" }}>
+      <TableView data={value} />
     </div>
   );
 }
