@@ -1,12 +1,5 @@
-import React from "react";
-import api from "./Api";
-import ReactDOM from "react-dom";
-import { cleanup, render } from "@testing-library/react";
-import App from "./App";
-import { GridOptions } from "ag-grid-community";
-import fetch from "jest-fetch-mock";
-import { AgInputTextField } from "@ag-grid-community/core";
-// import fetchMock from 'fetch-mock';
+import { cleanup } from "@testing-library/react";
+import api from "../Api";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -20,7 +13,7 @@ global.fetch = jest.fn(() =>
 ) as jest.Mock;
 
 beforeEach(() => {
-  fetch.mockClear();
+  cleanup();
 });
 
 describe("withFetch", () => {

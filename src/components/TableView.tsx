@@ -79,11 +79,11 @@ const TableView: React.FC<{ data: dataFormate[] }> = (props) => {
   useEffect(() => ChangeDataValue(props.data), [props.data]);
   // console.log(dataValue);
   useEffect(() => {
-    const value = async () => {
-      // api.valuePost(userValue); //.then(function (result) {
-      // DialogBox(setOpen);
-      // console.log(value);
-    };
+    // const value = () => {
+    //   // api.valuePost(userValue); //.then(function (result) {
+    //   // DialogBox(setOpen);
+    //   // console.log(value);
+    // };
     const hgfh = async () => {
       await api
         .valueGet()
@@ -473,7 +473,6 @@ const TableView: React.FC<{ data: dataFormate[] }> = (props) => {
           tooltipHideDelay={2000}
           rowSelection={"multiple"}
           onCellContextMenu={(e) => {
-            console.log(e.data.id);
             localStorage.setItem("id", e.data.id);
             localStorage.setItem("filterValue", e.value);
           }}

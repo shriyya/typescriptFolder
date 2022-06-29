@@ -20,11 +20,11 @@ export default function DeleteDailog(prop) {
       api
         .valueGet()
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           return res.json();
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           prop.dataChange(res);
           prop.deleteDailog(false);
         });
@@ -43,8 +43,12 @@ export default function DeleteDailog(prop) {
           <>Want to delete this item?</>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={deletItem}>Delete</Button>
+          <Button onClick={handleClose} data-testid="cancel">
+            Cancel
+          </Button>
+          <Button onClick={deletItem} data-testid="delete">
+            Delete
+          </Button>
         </DialogActions>
       </Dialog>
     </div>

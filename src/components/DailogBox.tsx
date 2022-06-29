@@ -12,7 +12,7 @@ import api from "../Api";
 
 export default function DialogBox(prop) {
   const [open, setOpen] = React.useState(false);
-  if (prop.setOpen) console.log("open is working");
+  // if (prop.setOpen) console.log("open is working");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -115,7 +115,7 @@ export default function DialogBox(prop) {
         {prop.header}
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>
+        <DialogTitle data-testid="dialogBox">
           {prop.header === "Open form dialog to add data"
             ? "Details to be added"
             : prop.header}
@@ -166,7 +166,9 @@ export default function DialogBox(prop) {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose} data-testid="cancel">
+            Cancel
+          </Button>
 
           <Button
             disabled={
