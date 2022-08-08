@@ -10,10 +10,32 @@ import TableView from "../components/TableView";
 import "@testing-library/jest-dom";
 import DialogBox from "../components/DailogBox";
 
-type dataFormate = { userId: number; id: number; title: string; body: string };
+interface dataFormate {
+  athlete: string;
+  age: number;
+  country: string;
+  year: number;
+  sport: string;
+  gold: number;
+  silver: number;
+  bronze: number;
+  total: number;
+  id: number;
+}
 describe("Dailog Componenet", () => {
   let value: dataFormate[] = [
-    { userId: 10, id: 3, title: "hello", body: "good morning" },
+    {
+      age: 31,
+      athlete: "Sandra Wagner-Sachse",
+      bronze: 1,
+      country: "Germany",
+      gold: 0,
+      silver: 0,
+      sport: "Archery",
+      total: 1,
+      year: 2000,
+      id: 2,
+    },
   ];
   const handleClose = jest.fn();
 
@@ -34,11 +56,55 @@ describe("Dailog Componenet", () => {
 
     const openDailog = await screen.findByText("Open form dialog to add data");
     fireEvent.click(openDailog);
-    const userId = screen.findByLabelText("UserId");
+    const athlete = screen.findByLabelText("athlete");
+    const age = screen.findByLabelText("age");
+    const bronze = screen.findByLabelText("bronze");
+    const country = screen.findByLabelText("country");
+    const gold = screen.findByLabelText("gold");
+    const silver = screen.findByLabelText("silver");
+    const sport = screen.findByLabelText("sport");
+    const total = screen.findByLabelText("total");
+    const year = screen.findByLabelText("year");
 
-    fireEvent.change(await userId, {
+    fireEvent.change(await athlete, {
       target: {
-        value: "Sample list UserId",
+        value: "Sandra Wagner-Sachse",
+      },
+    });
+
+    fireEvent.change(await age, {
+      target: {
+        value: 31,
+      },
+    });
+    fireEvent.change(await bronze, {
+      target: {
+        value: 1,
+      },
+    });
+    fireEvent.change(await gold, {
+      target: {
+        value: 0,
+      },
+    });
+    fireEvent.change(await silver, {
+      target: {
+        value: 0,
+      },
+    });
+    fireEvent.change(await total, {
+      target: {
+        value: 1,
+      },
+    });
+    fireEvent.change(await country, {
+      target: {
+        value: "Germany",
+      },
+    });
+    fireEvent.change(await sport, {
+      target: {
+        value: "Archery",
       },
     });
     expect(
@@ -46,23 +112,10 @@ describe("Dailog Componenet", () => {
         name: /add details/i,
       })
     ).toBeDisabled();
-    const title = screen.findByLabelText("Title");
 
-    fireEvent.change(await title, {
+    fireEvent.change(await year, {
       target: {
-        value: "Sample Text",
-      },
-    });
-    expect(
-      await screen.findByRole("button", {
-        name: /add details/i,
-      })
-    ).toBeDisabled();
-    const body = screen.findByLabelText("Body");
-
-    fireEvent.change(await body, {
-      target: {
-        value: "Sample Body text",
+        value: 2021,
       },
     });
 
@@ -80,27 +133,11 @@ describe("Dailog Componenet", () => {
     const openUpdateDailog = await screen.findByText(/update/i);
     fireEvent.click(openUpdateDailog);
 
-    const userId = screen.findByLabelText("UserId");
+    const year = screen.findByLabelText("year");
 
-    fireEvent.change(await userId, {
+    fireEvent.change(await year, {
       target: {
-        value: "10",
-      },
-    });
-
-    const title = screen.findByLabelText("Title");
-
-    fireEvent.change(await title, {
-      target: {
-        value: "hello",
-      },
-    });
-
-    const body = screen.findByLabelText("Body");
-
-    fireEvent.change(await body, {
-      target: {
-        value: "good morning",
+        value: 2021,
       },
     });
 

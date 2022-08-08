@@ -1,46 +1,195 @@
 {
-  "post": [
+  "mechs": [
     {
-      "title": "hello",
-      "body": "hello",
-      "userId": "hello",
-      "id": 4
+      "id": 1,
+      "type": "WHM-6R",
+      "olympic": 1
     },
     {
-      "title": "hiiihello",
-      "body": "hiiihello",
-      "userId": "hiiihello",
-      "id": 6
+      "id": 2,
+      "type": "MAD-3R",
+      "olympic": 2
     },
     {
-      "title": "hello",
-      "body": "hello",
-      "userId": "hello",
-      "id": 7
+      "id": 3,
+      "type": "CRD-3R",
+      "olympic": 3
     },
     {
-      "title": "hellofrom shreya",
-      "body": "hellofrom shreya",
-      "userId": "hellofrom shreya",
-      "id": 8
+      "id": 4,
+      "type": "GRF-1N",
+      "olympic": 4
     },
     {
-      "title": "hellofrom shreyaa",
-      "body": "hellofrom shreyaa",
-      "userId": "hellofrom shreyaa",
-      "id": 9
+      "id": 5,
+      "type": "ARC-2R",
+      "olympic": 5
     },
     {
-      "title": "dhellofrom shreya",
-      "body": "dhellofrom shreya",
-      "userId": "dhellofrom shreya",
-      "id": 10
+      "id": 6,
+      "type": "ARC-2R",
+      "olympic": 6
     },
     {
-      "title": "hiiii",
-      "body": "hiiii",
-      "userId": "hiiii",
-      "id": 11
+      "id": 7,
+      "type": "WSP-1A",
+      "olympic": 7
+    },
+    {
+      "id": 8,
+      "type": "STG-3R",
+      "olympic": 8
+    },
+    {
+      "id": 9,
+      "type": "RFL-3N",
+      "olympic": 9
+    },
+    {
+      "id": 10,
+      "type": "PXH-1K",
+      "olympic": 10
+    },
+    {
+      "id": 11,
+      "type": "STG-3R",
+      "olympic": 11
+    },
+    {
+      "id": 12,
+      "type": "STG-3R",
+      "olympic": 12
+    }
+  ],
+  "lances": [
+    {
+      "id": 1,
+      "name": "Command Lance",
+      "olympic": [1, 2, 3, 4]
+    },
+    {
+      "id": 2,
+      "name": "Fire Lance",
+      "olympic": [5, 6, 7, 8]
+    },
+    {
+      "id": 3,
+      "name": "Recon Lance",
+      "olympic": [9, 10, 11, 12]
+    }
+  ],
+  "olympic": [
+    {
+      "athlete": "kjskjd",
+      "age": 1,
+      "country": "sdc",
+      "year": 1221,
+      "sport": "kndfk",
+      "gold": 1,
+      "silver": 1,
+      "bronze": 3,
+      "total": 4,
+      "id": 1,
+      "mech": 1
+    },
+    {
+      "athlete": "hbjhcs",
+      "age": 12,
+      "country": "sdf",
+      "year": 213,
+      "sport": "sdf",
+      "gold": 2,
+      "silver": 1,
+      "bronze": 1,
+      "total": 3,
+      "id": 2,
+      "mech": 2
+    },
+    {
+      "athlete": "micheal",
+      "age": 13,
+      "country": "1234",
+      "year": 2021,
+      "sport": "swimming",
+      "gold": 2,
+      "silver": 1,
+      "bronze": 3,
+      "total": 6,
+      "id": 3,
+      "mech": 3
+    },
+    {
+      "athlete": "micheal",
+      "age": 13,
+      "country": "1234",
+      "year": 2021,
+      "sport": "swimming",
+      "gold": 2,
+      "silver": 1,
+      "bronze": 3,
+      "total": 6,
+      "id": 4,
+      "mech": 4
+    },
+    {
+      "athlete": "micheal",
+      "age": 13,
+      "country": "1234",
+      "year": 2021,
+      "sport": "swimming",
+      "gold": 2,
+      "silver": 1,
+      "bronze": 3,
+      "total": 6,
+      "id": 5,
+      "mech": 5
+    }
+  ],
+  "designs": [
+    {
+      "id": "STG-3R",
+      "name": "Stinger",
+      "weight": 20
+    },
+    {
+      "id": "WSP-1A",
+      "name": "Wasp",
+      "weight": 20
+    },
+    {
+      "id": "PXH-1K",
+      "name": "Phoenix Hawk",
+      "weight": 45
+    },
+    {
+      "id": "GRF-1N",
+      "name": "Griffin",
+      "weight": 55
+    },
+    {
+      "id": "RFL-3N",
+      "name": "Rifleman",
+      "weight": 60
+    },
+    {
+      "id": "CRD-3R",
+      "name": "Crusader",
+      "weight": 65
+    },
+    {
+      "id": "ARC-2R",
+      "name": "Archer",
+      "weight": 70
+    },
+    {
+      "id": "WHM-6R",
+      "name": "Warhammer",
+      "weight": 70
+    },
+    {
+      "id": "MAD-3R",
+      "name": "Marauder",
+      "weight": 75
     }
   ]
 }

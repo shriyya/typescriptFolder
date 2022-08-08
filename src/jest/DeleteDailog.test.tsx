@@ -3,11 +3,32 @@ import React from "react";
 import "@testing-library/jest-dom";
 import DeleteDailog from "../components/DeleteDailog";
 
-type dataFormate = { userId: number; id: number; title: string; body: string };
-
+interface dataFormate {
+  athlete: string;
+  age: number;
+  country: string;
+  year: number;
+  sport: string;
+  gold: number;
+  silver: number;
+  bronze: number;
+  total: number;
+  id: number;
+}
 describe("Dailog Componenet", () => {
   let value: dataFormate[] = [
-    { userId: 10, id: 3, title: "hello", body: "good morning" },
+    {
+      age: 31,
+      athlete: "Sandra Wagner-Sachse",
+      bronze: 1,
+      country: "Germany",
+      gold: 0,
+      silver: 0,
+      sport: "Archery",
+      total: 1,
+      year: 2000,
+      id: 2,
+    },
   ];
   const handleClose = jest.fn();
   beforeEach(() => {
@@ -18,7 +39,7 @@ describe("Dailog Componenet", () => {
     expect("want to delete").toEqual("want to delete");
   });
   it("delete dialog Box when clicked cancel button", async () => {
-    fireEvent.click(screen.getByTestId("cancel"), handleClose());
+    fireEvent.click(await screen.findByTestId("cancel"), handleClose());
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 });

@@ -4,10 +4,11 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import api from "../Api";
+// import api from "../Api";
 
 export default function DeleteDailog(prop) {
   const [open, setOpen] = React.useState(true);
+  console.log(prop);
 
   const handleClose = () => {
     setOpen(false);
@@ -15,25 +16,29 @@ export default function DeleteDailog(prop) {
 
   const deletItem = () => {
     handleClose();
-    api.valueDelete(localStorage.getItem("id"));
-    setTimeout(() => {
-      api
-        .valueGet()
-        .then((res) => {
-          // console.log(res);
-          return res.json();
-        })
-        .then((res) => {
-          // console.log(res);
-          prop.dataChange(res);
-          prop.deleteDailog(false);
-        });
-    }, 1000);
+    console.log(prop.store.prop.alldata);
+
+    prop.store.prop.removeData(prop.store.prop.alldata.localStorageId);
+    prop.deleteDailog(false);
+    // api.valueDelete(localStorage.getItem("id"));
+    // setTimeout(() => {
+    //   api
+    //     .valueGet()
+    //     .then((res) => {
+    //       // console.log(res);
+    //       return res.json();
+    //     })
+    //     .then((res) => {
+    //       // console.log(res);
+    //       prop.dataChange(res);
+    //       prop.deleteDailog(false);
+    //     });
+    // }, 1000);
   };
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} data-test-id="deletedailog">
         <DialogTitle>
           {prop.header === "Open form dialog to add data"
             ? "Details to be added"
@@ -46,7 +51,7 @@ export default function DeleteDailog(prop) {
           <Button onClick={handleClose} data-testid="cancel">
             Cancel
           </Button>
-          <Button onClick={deletItem} data-testid="delete">
+          <Button onClick={deletItem} data-test-id="delete">
             Delete
           </Button>
         </DialogActions>

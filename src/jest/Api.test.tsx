@@ -1,16 +1,16 @@
 import { cleanup } from "@testing-library/react";
 import api from "../Api";
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () =>
-      Promise.resolve({
-        title: "jhbhj",
-        userId: 10,
-        body: "hvjh",
-      }),
-  })
-) as jest.Mock;
+// global.fetch = jest.fn(() =>
+//   Promise.resolve({
+//     json: () =>
+//       Promise.resolve({
+//         title: "jhbhj",
+//         userId: 10,
+//         body: "hvjh",
+//       }),
+//   })
+// ) as jest.Mock;
 
 beforeEach(() => {
   cleanup();
@@ -20,7 +20,7 @@ describe("withFetch", () => {
   test("get ", async () => {
     const fetchMock = jest.spyOn(global, "fetch");
     const json = await api.valueGet();
-    expect(fetchMock).toHaveBeenCalledWith("http://localhost:4002/post");
+    expect(fetchMock).toHaveBeenCalledWith("http://localhost:4002/olympic");
 
     expect(fetchMock).toBeTruthy();
   });

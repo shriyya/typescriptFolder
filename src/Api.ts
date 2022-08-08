@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 type dataFormate = { userId: number; id: number; title: string; body: string };
 const api = {
   valueGet: function () {
-    return fetch("http://localhost:4002/post");
+    return fetch("http://localhost:4000/olympic");
   },
 
   valuePost: async (userValue) => {
-    return fetch("http://localhost:4002/post", {
+    return fetch("http://localhost:4000/olympic", {
       method: "POST",
       body: JSON.stringify({
         title: userValue.title,
@@ -26,7 +26,7 @@ const api = {
   },
 
   valuePut: function (id, userValue) {
-    return fetch(`http://localhost:4002/post/${id}`, {
+    return fetch(`http://localhost:4000/olympic/${id}`, {
       method: "PUT",
       body: JSON.stringify({
         title: userValue.title,
@@ -46,7 +46,7 @@ const api = {
   },
 
   valueDelete: function (id) {
-    return fetch(`http://localhost:4002/post/${id}`, {
+    return fetch(`http://localhost:4000/olympic/${id}`, {
       method: "DELETE",
     });
     // .then((response) => {
